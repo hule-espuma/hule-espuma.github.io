@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lydia J Gallegos</title>
+  <meta name="description" content="Lydia J Gallegos — multidisciplinary graphic designer in Mexico City.">
+  <link rel="icon" href="images/frog.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Design tokens (from Figma) ---------- */
+    :root {
+      --ink: #000000;
+      --muted: #969393;
+      --paper: #ffffff;
+
+      --column: 274px;        /* text column width */
+      --wide-media: 432px;    /* wide photo width on desktop */
+
+      --name-size: 21px;
+      --place-size: 18px;
+      --body-size: 11.4px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Public Sans", system-ui, sans-serif;
+      font-weight: 300;
+      font-size: var(--body-size);
+      line-height: 1.33;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: var(--column);
+      margin: 72px auto 96px;
+    }
+
+    /* ---------- Header ---------- */
+    h1, .place {
+      font-weight: 500;
+      line-height: 0.96;
+    }
+    h1     { font-size: var(--name-size); }
+    .place { font-size: var(--place-size); color: var(--muted); margin-top: 10px; }
+
+    /* ---------- Media (the part you swap) ---------- */
+    .media { margin: 30px 0 30px; }
+    .media img { display: block; }
+
+    /* Small illustration, left-aligned with the text (the frog) */
+    .media--small img {
+      width: 114px;
+      height: auto;
+      margin-left: -4px;
+    }
+
+    /* Wide photo, centered and wider than the text column */
+    .media--wide {
+      width: var(--wide-media);
+      margin-left: calc((var(--column) - var(--wide-media)) / 2);
+    }
+    .media--wide img {
+      width: 100%;
+      aspect-ratio: 432 / 197;
+      object-fit: cover;
+    }
+
+    /* ---------- Body text ---------- */
+    p + p { margin-top: 15px; }
+    p.thanks { margin-top: 20px; }
+
+    a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { color: var(--ink); }
+
+    .heart {
+      width: 11.5px;
+      height: 11.5px;
+      vertical-align: -2px;
+      margin-left: 2px;
+      fill: var(--ink);
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 600px) {
+      :root {
+        --name-size: 19.4px;
+        --place-size: 13.2px;
+        --body-size: 10px;
+      }
+      main {
+        width: auto;
+        max-width: 280px;
+        margin: 29px 21px 64px;
+      }
+      .place { margin-top: 7px; }
+      .media { margin: 20px 0 18px; }
+      .media--small img { width: 100px; }
+      .media--wide { width: 100%; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Lydia J Gallegos</h1>
+      <p class="place">Mexico City</p>
+    </header>
+
+    <!--
+      ===== MEDIA =====
+      Swap the image whenever you like.
+      • Small illustration:  class="media media--small"
+      • Wide photo:          class="media media--wide"
+      Put the file in the /images folder and change src= below.
+      Always update alt= with a short description of the picture.
+    -->
+    <figure class="media media--small">
+      <img src="images/frog.png" alt="Watercolor illustration of a green frog">
+    </figure>
+
+    <!-- Example of the wide-photo version (delete the block above and uncomment this):
+    <figure class="media media--wide">
+      <img src="images/photo.jpg" alt="Dark green car parked behind a fence on a tree-lined street">
+    </figure>
+    -->
+
+    <p>
+      Lydia is a multidisciplinary graphic designer that enjoys solving complex visual
+      systems that involve digital and mixed media - or whatever she can get her hands on.
+      Current corporate girlie - occasional freelancer. She spins.
+    </p>
+
+    <p>
+      For work inquiries you can find me in
+      <a href="https://www.linkedin.com/in/lydia-j-gallegos-1a00a4199/" target="_blank" rel="noopener">LinkedIn</a>,
+      check out my <a href="resume.pdf" target="_blank" rel="noopener">resume</a>
+      or request my portfolio via <a href="mailto:lydia@hola-hule.com">email</a>.
+    </p>
+
+    <p>
+      Find me on
+      <a href="https://www.instagram.com/hule_espuma/" target="_blank" rel="noopener">Instagram</a>,
+      <a href="https://letterboxd.com/wormgrl/" target="_blank" rel="noopener">Letterboxd</a>
+      and <a href="https://www.are.na/lydia-gallegos" target="_blank" rel="noopener">Are.na</a>.
+    </p>
+
+    <p class="thanks">
+      Thank you for visiting
+      <svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </p>
+  </main>
+</body>
+</html>
